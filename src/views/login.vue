@@ -134,13 +134,21 @@ export default {
       this.showVer = false
       // 是否完成验证
       this.isFinish = true
+      // 登录
       const data = {
         userName: this.userName,
         passWord: this.passWord
       }
-      // 登录
       isLogin(data).then((data) => {
-        console.log(data.data)
+        if (data.data.code === 200) {
+          localStorage.setItem('token', data.data.token)
+          this.$router.push({ path: '/' })
+        } else {
+          this.$popup({
+            messType: 'error',
+            content: data.data.message
+          })
+        }
       })
     },
     onFail () {

@@ -1,7 +1,6 @@
 <template>
   <div id="wapper">
-    <!-- 背景图 -->
-    <img class="wap_back opacity" src="../assets/wapper.png" alt="" />
+    <!-- <img class="wap_back opacity" src="../assets/wapper.png" alt="" /> -->
   </div>
 </template>
 <script>
